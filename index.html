@@ -51,7 +51,7 @@
                     <h2 class="text-xl font-semibold mb-4">Subscription. For you or for two?</h2>
                     
                     <div class="space-y-4">
-                        <label class="block p-4 border border-teal-600 rounded-lg cursor-pointer">
+                        <label class="block p-4 border border-teal-600 rounded-lg cursor-pointer" id="single-option">
                             <div class="flex items-center justify-between">
                                 <div>
                                     <span class="font-semibold">Single</span>
@@ -68,7 +68,7 @@
                             </div>
                         </label>
                         
-                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer">
+                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer" id="double-option">
                             <div class="flex items-center justify-between">
                                 <div>
                                     <span class="font-semibold">Double</span>
@@ -83,7 +83,7 @@
                         
                         <div class="text-center text-sm text-gray-500">OR</div>
                         
-                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer">
+                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer" id="onetime-option">
                             <div class="flex items-center justify-between">
                                 <span class="font-semibold">Buy one time</span>
                                 <span class="font-bold">107€</span>
@@ -92,14 +92,66 @@
                         </label>
                     </div>
                     
-                    <button class="w-full bg-teal-600 text-white py-3 px-6 rounded-md font-semibold mt-6 hover:bg-teal-700 transition duration-300">
-                        Subscribe →
-                    </button>
-                    
-                    <p class="text-center text-teal-600 font-medium mt-4">You're Saving 20€ p/M</p>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold mb-2">Get notified when available</h3>
+                        <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
+                            <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" required>
+                            <button type="submit" class="bg-teal-600 text-white py-2 px-6 rounded-md font-semibold hover:bg-teal-700 transition duration-300">
+                                Notify Me
+                            </button>
+                        </form>
+                        <p id="form-message" class="mt-2 text-sm"></p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        // Subscription option selection
+        const options = ['single-option', 'double-option', 'onetime-option'];
+        options.forEach(id => {
+            document.getElementById(id).addEventListener('click', () => {
+                options.forEach(optionId => {
+                    const element = document.getElementById(optionId);
+                    if (optionId === id) {
+                        element.classList.remove('border-gray-300');
+                        element.classList.add('border-teal-600');
+                    } else {
+                        element.classList.remove('border-teal-600');
+                        element.classList.add('border-gray-300');
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('notify-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const messageElement = document.getElementById('form-message');
+
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                if (response.ok) {
+                    messageElement.textContent = 'Thank you! We'll notify you when the product is available.';
+                    messageElement.classList.add('text-green-600');
+                    document.getElementById('email-input').value = '';
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            } catch (error) {
+                messageElement.textContent = 'Oops! Something went wrong. Please try again later.';
+                messageElement.classList.add('text-red-600');
+            }
+        });
+    </script>
 </body>
 </html>
