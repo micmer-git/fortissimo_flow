@@ -59,10 +59,6 @@
             z-index: 999;
         }
 
-        .subscription-option {
-            transition: all 0.3s ease;
-        }
-
         .subscription-option.selected {
             background-color: #e6f7ff;
             border-color: #4facb0;
@@ -80,6 +76,15 @@
                     <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
                     <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
                     <li><a href="#contact" class="text-gray-600 hover:text-[#4facb0]">Contact</a></li>
+                    <li>
+                        <a href="index.html" class="text-gray-600 hover:text-[#4facb0]">EN</a>
+                    </li>
+                    <li>
+                        <a href="index-it.html" class="text-gray-600 hover:text-[#4facb0]">IT</a>
+                    </li>
+                    <li>
+                        <a href="index-es.html" class="text-gray-600 hover:text-[#4facb0]">ES</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -222,68 +227,5 @@
     </div>
 
     <script src="script.js"></script>
-
-    <script>
-
-        let selectedSubscription = 'longd_monthly_single'; // Default selection
-
-        document.querySelectorAll('.subscription-option').forEach(button => {
-            button.addEventListener('click', function() {
-                document.querySelectorAll('.subscription-option').forEach(btn => btn.classList.remove('bg-blue-50', 'border-[#4facb0]'));
-                this.classList.add('bg-blue-50', 'border-[#4facb0]');
-                selectedSubscription = this.dataset.value;
-            });
-        });
-
-        document.getElementById('notify-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const messageElement = document.getElementById('form-message');
-
-            fetch('https://script.google.com/macros/s/AKfycbxjm9zfx_0LnjFtttRcgJj1nqLUcZyY9ZxJFVk00BXessUnl4SV7eOcaduAk1dujvXg/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `email=${encodeURIComponent(email)}&subscription=${encodeURIComponent(selectedSubscription)}`
-            })
-            .then(response => {
-                messageElement.textContent = 'Thank you for subscribing!';
-                messageElement.classList.remove('text-red-600');
-                messageElement.classList.add('text-green-600');
-                document.getElementById('email-input').value = '';
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                messageElement.textContent = 'An error occurred. Please try again.';
-                messageElement.classList.remove('text-green-600');
-                messageElement.classList.add('text-red-600');
-            });
-        });
-
-        // Exit intent popup
-        let popupShown = false;
-        document.addEventListener('mouseleave', (e) => {
-            if (e.clientY <= 0 && !popupShown) {
-                document.getElementById('exitIntentOverlay').style.display = 'block';
-                document.getElementById('exitIntentPopup').style.display = 'block';
-                popupShown = true;
-            }
-        });
-
-        document.getElementById('closePopup').addEventListener('click', () => {
-            document.getElementById('exitIntentOverlay').style.display = 'none';
-            document.getElementById('exitIntentPopup').style.display = 'none';
-        });
-
-        document.getElementById('exit-intent-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-            // Handle form submission here
-            console.log('Exit intent form submitted');
-            document.getElementById('exitIntentOverlay').style.display = 'none';
-            document.getElementById('exitIntentPopup').style.display = 'none';
-        });
-    </script>
 </body>
 </html>
