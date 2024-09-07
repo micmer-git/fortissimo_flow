@@ -112,50 +112,31 @@
                         <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Choose Your Health Portfolio</h3>
                         
                         <div class="space-y-4">
-                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                                <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
-                                        <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
+                            <form id="subscription-form">
+                                <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                                    <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
+                                            <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
+                                            <span class="text-sm text-gray-500 line-through">107€</span>
+                                        </div>
                                     </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">107€</span>
-                                    </div>
+                                </label>
+                                
+                                <!-- Add other subscription options here -->
+                                
+                                <div class="mt-6">
+                                    <input type="email" id="email-input" placeholder="Enter your email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
                                 </div>
-                            </label>
-                            
-                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                                <input type="radio" name="subscription" value="longd_monthly_double" class="hidden">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold text-[#4facb0]">LONGd Monthly Double</span>
-                                        <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl text-[#4facb0]">167€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">214€</span>
-                                    </div>
+                                <div class="mt-4">
+                                    <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
+                                        Notify Me
+                                    </button>
                                 </div>
-                            </label>
-                            
-                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                                <input type="radio" name="subscription" value="longd_onetime_purchase" class="hidden">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
-                                    <span class="font-bold text-[#4facb0]">107€</span>
-                                </div>
-                            </label>
-                        </div>
-                        
-                        <div class="mt-6">
-                            <h3 class="text-lg font-semibold mb-2 text-[#4facb0]">Get notified when available</h3>
-                            <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
-                                <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
-                                <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
-                                    Notify Me
-                                </button>
                             </form>
                             <p id="form-message" class="mt-2 text-sm"></p>
                         </div>
@@ -241,10 +222,36 @@
             option.addEventListener('click', function() {
                 document.querySelectorAll('.subscription-option').forEach(opt => opt.classList.remove('selected'));
                 this.classList.add('selected');
-                const selectedValue = this.querySelector('input').value;
-                // Here you would send the selectedValue to your API
-                console.log('Selected option:', selectedValue);
             });
+        });
+
+        document.getElementById('subscription-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const subscription = document.querySelector('input[name="subscription"]:checked').value;
+            const messageElement = document.getElementById('form-message');
+
+            fetch('https://script.google.com/macros/s/AKfycbx_v5j0qSOeSaxE-hqgkfgOvtMLmIRZfCxY6sFapnnhIrgHzwwz0zuLnIbbUdSq4359/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `email=${encodeURIComponent(email)}&subscription=${encodeURIComponent(subscription)}`
+            })
+            .then(response => {
+                console.log('Response received:', response);
+                messageElement.textContent = 'Thank you for subscribing!';
+                messageElement.classList.add('text-green-600');
+                document.getElementById('email-input').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                messageElement.textContent = 'An error occurred. Please try again.';
+                messageElement.classList.add('text-red-600');
+            });
+
+            console.log('Sending data:', { email, subscription });
         });
 
         // Exit intent popup
@@ -270,6 +277,5 @@
             document.getElementById('exitIntentPopup').style.display = 'none';
         });
     </script>
-
 </body>
 </html>
