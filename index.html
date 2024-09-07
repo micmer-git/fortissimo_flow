@@ -58,6 +58,15 @@
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 999;
         }
+
+        .subscription-option {
+            transition: all 0.3s ease;
+        }
+
+        .subscription-option.selected {
+            background-color: #e6f7ff;
+            border-color: #4facb0;
+        }
     </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
@@ -103,7 +112,7 @@
                         <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Choose Your Health Portfolio</h3>
                         
                         <div class="space-y-4">
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
                                 <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -117,7 +126,7 @@
                                 </div>
                             </label>
                             
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
                                 <input type="radio" name="subscription" value="longd_monthly_double" class="hidden">
                                 <div class="flex items-center justify-between">
                                     <div>
@@ -131,7 +140,7 @@
                                 </div>
                             </label>
                             
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <label class="subscription-option block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
                                 <input type="radio" name="subscription" value="longd_onetime_purchase" class="hidden">
                                 <div class="flex items-center justify-between">
                                     <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
@@ -216,6 +225,51 @@
         </div>
     </footer>
 
-    
+    <div class="exit-intent-overlay" id="exitIntentOverlay"></div>
+    <div class="exit-intent-popup" id="exitIntentPopup">
+        <h2 class="text-2xl font-bold mb-4">Wait! Don't miss out on LONGd</h2>
+        <p class="mb-4">Subscribe now and get 10% off your first order!</p>
+        <form id="exit-intent-form">
+            <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded" required>
+            <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-4 rounded">Subscribe</button>
+        </form>
+        <button id="closePopup" class="mt-4 text-gray-600">No thanks, I'll pass</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('.subscription-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.subscription-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                const selectedValue = this.querySelector('input').value;
+                // Here you would send the selectedValue to your API
+                console.log('Selected option:', selectedValue);
+            });
+        });
+
+        // Exit intent popup
+        let popupShown = false;
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY <= 0 && !popupShown) {
+                document.getElementById('exitIntentOverlay').style.display = 'block';
+                document.getElementById('exitIntentPopup').style.display = 'block';
+                popupShown = true;
+            }
+        });
+
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('exitIntentOverlay').style.display = 'none';
+            document.getElementById('exitIntentPopup').style.display = 'none';
+        });
+
+        document.getElementById('exit-intent-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Handle form submission here
+            console.log('Exit intent form submitted');
+            document.getElementById('exitIntentOverlay').style.display = 'none';
+            document.getElementById('exitIntentPopup').style.display = 'none';
+        });
+    </script>
+
 </body>
 </html>
