@@ -221,7 +221,10 @@
         <button id="closePopup" class="mt-4 text-gray-600">No thanks, I'll pass</button>
     </div>
 
+    <script src="script.js"></script>
+
     <script>
+
         let selectedSubscription = 'longd_monthly_single'; // Default selection
 
         document.querySelectorAll('.subscription-option').forEach(button => {
@@ -237,7 +240,7 @@
             const email = document.getElementById('email-input').value;
             const messageElement = document.getElementById('form-message');
 
-            fetch('https://script.google.com/macros/s/AKfycbx_v5j0qSOeSaxE-hqgkfgOvtMLmIRZfCxY6sFapnnhIrgHzwwz0zuLnIbbUdSq4359/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxjm9zfx_0LnjFtttRcgJj1nqLUcZyY9ZxJFVk00BXessUnl4SV7eOcaduAk1dujvXg/exec', {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
@@ -246,8 +249,6 @@
                 body: `email=${encodeURIComponent(email)}&subscription=${encodeURIComponent(selectedSubscription)}`
             })
             .then(response => {
-                // Since mode is 'no-cors', we can't access the response content
-                // We'll assume success if we get here
                 messageElement.textContent = 'Thank you for subscribing!';
                 messageElement.classList.remove('text-red-600');
                 messageElement.classList.add('text-green-600');
