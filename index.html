@@ -36,12 +36,163 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
-    <header>
-        <nav>
-            <!-- Add navigation menu items here -->
+<body class="text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text">LONGd</a>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
+                    <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
+                    <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
+                    <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-[#4facb0]">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
+
+    <main class="flex-grow">
+        <div class="max-w-6xl mx-auto mt-8 px-4">
+            <div class="text-center mb-8">
+                <h1 class="text-5xl font-bold mb-4 gradient-text">Do your best work with LONGd</h1>
+                <p class="text-xl text-gray-600">Because your body deserves a better interest rate than your savings account!</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 flex justify-center items-center">
+                    <div class="bg-white p-6 rounded-lg custom-shadow">
+                        <img src="images/OIG1.jpeg" alt="LONGd Product Set - Premium Longevity Supplements" class="w-full h-auto rounded-md mx-auto" width="500" height="500">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: The Compound Interest of Health Supplements</h2>
+                    <p class="mb-4 text-gray-600">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
+                    <ul class="list-disc list-inside mb-4 text-gray-600">
+                        <li>Glycine for longevity</li>
+                        <li>Potassium and Magnesium for performance</li>
+                        <li>Vitamins and fibers for gut and body balance</li>
+                    </ul>
+                    
+                    <div class="bg-white p-6 rounded-lg custom-shadow">
+                        <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Choose Your Health Portfolio</h3>
+                        
+                        <div class="space-y-4">
+                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                                <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
+                                        <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
+                                        <span class="text-sm text-gray-500 line-through">107€</span>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                                <input type="radio" name="subscription" value="longd_monthly_double" class="hidden">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <span class="font-semibold text-[#4facb0]">LONGd Monthly Double</span>
+                                        <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <span class="font-bold text-xl text-[#4facb0]">167€ p/M</span>
+                                        <span class="text-sm text-gray-500 line-through">214€</span>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                                <input type="radio" name="subscription" value="longd_onetime_purchase" class="hidden">
+                                <div class="flex items-center justify-between">
+                                    <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
+                                    <span class="font-bold text-[#4facb0]">107€</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h3 class="text-lg font-semibold mb-2 text-[#4facb0]">Get notified when available</h3>
+                            <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
+                                <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
+                                <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
+                                    Notify Me
+                                </button>
+                            </form>
+                            <p id="form-message" class="mt-2 text-sm"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="science" class="mt-16">
+            <h2 class="text-4xl font-bold mb-8 text-center gradient-text">The Science Behind LONGd</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                    <img src="images/glycine.webp" alt="Glycine - Key Ingredient in LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Glycine for Longevity</h3>
+                    <p class="text-gray-600">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                    <img src="images/minerals.webp" alt="Minerals - Essential Components of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Minerals for Performance</h3>
+                    <p class="text-gray-600">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                    <img src="images/gut.webp" alt="Gut Health - A Focus of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Gut Health and Overall Balance</h3>
+                    <p class="text-gray-600">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-16 bg-gray-100 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4 gradient-text">LONGd</h3>
+                    <p class="text-gray-600">Investing in your long-term health with premium longevity supplements.</p>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
+                        <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
+                        <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Contact Us</h4>
+                    <p class="text-gray-600">Email: info@longd.com</p>
+                    <p class="text-gray-600">Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="w-full md:w-1/4">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Facebook</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Twitter</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-gray-600">
+                <p>&copy; 2023 LONGd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
     <main class="max-w-6xl mx-auto mt-8 px-4">
         <div class="text-center mb-8">
             <h1 class="text-5xl font-bold mb-4 gradient-text">Do your best work with LONGd</h1>
