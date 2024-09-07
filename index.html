@@ -3,153 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VitaBoost - Premium Daily Supplement</title>
+    <title>LONGd - Invest in Your Health</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
         }
         
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .gradient-text {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        
-        body {
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <header class="py-4 px-6 bg-white shadow-sm">
-        <nav class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-3xl font-bold text-teal-600">VitaBoost</div>
-            <div class="text-sm font-medium text-teal-600">FREE VITAMIN D3 + K2 + 5 TRAVEL PACKS**</div>
-        </nav>
-    </header>
-
-    <main class="max-w-7xl mx-auto mt-8 px-4">
+<body class="text-gray-800">
+    <main class="max-w-6xl mx-auto mt-8 px-4">
         <div class="text-center mb-8">
-            <p class="text-xl font-semibold">Trusted by over 200 health-conscious individuals</p>
+            <h1 class="text-5xl font-bold mb-4 gradient-text">Do your best work with LONGd</h1>
+            <p class="text-xl text-gray-600">Because your body deserves a better interest rate than your savings account!</p>
         </div>
         
         <div class="flex flex-col md:flex-row gap-8">
             <div class="md:w-1/2">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <img src="/api/placeholder/600/600" alt="VitaBoost Product Set" class="w-full h-auto rounded-md">
-                </div>
-                <div class="mt-4 flex space-x-2 overflow-x-auto">
-                    <img src="/api/placeholder/80/80" alt="Thumbnail 1" class="w-20 h-20 rounded-md cursor-pointer">
-                    <img src="/api/placeholder/80/80" alt="Thumbnail 2" class="w-20 h-20 rounded-md cursor-pointer">
-                    <img src="/api/placeholder/80/80" alt="Thumbnail 3" class="w-20 h-20 rounded-md cursor-pointer">
-                    <img src="images/OIG1.jpg" alt="Thumbnail 4" class="w-20 h-20 rounded-md cursor-pointer">
+                <div class="bg-white p-6 rounded-lg custom-shadow h-full">
+                    <img src="images/OIG1.jpeg" alt="LONGd Product Set" class="w-full h-auto rounded-md">
                 </div>
             </div>
             
             <div class="md:w-1/2">
-                <div class="flex items-center mb-4">
-                    <div class="text-yellow-400 flex">
-                        ★★★★★
-                    </div>
-                    <span class="ml-2 text-sm text-gray-600">45,852+ Verified 5-star reviews</span>
-                </div>
+                <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: The Compound Interest of Health Supplements</h2>
+                <p class="mb-4 text-gray-600">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
+                <ul class="list-disc list-inside mb-4 text-gray-600">
+                    <li>Glycine for longevity</li>
+                    <li>Potassium and Magnesium for performance</li>
+                    <li>Vitamins and fibers for gut and body balance</li>
+                </ul>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex space-x-2 mb-6">
-                        <button id="pouch-btn" class="flex-1 bg-black text-white py-2 px-4 rounded-md font-medium">The Pouch</button>
-                        <button id="travel-btn" class="flex-1 bg-gray-100 text-gray-800 py-2 px-4 rounded-md font-medium">Travel Packs</button>
-                    </div>
+                <div class="bg-white p-6 rounded-lg custom-shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Choose Your Health Portfolio</h3>
                     
-                    <div id="pouch-content">
-                        <h2 class="text-xl font-semibold mb-4">Subscription. For you or for two?</h2>
+                    <div class="space-y-4">
+                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
+                                    <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
+                                </div>
+                                <div class="text-right">
+                                    <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
+                                    <span class="text-sm text-gray-500 line-through">107€</span>
+                                </div>
+                            </div>
+                        </label>
                         
-                        <div class="space-y-4">
-                            <label class="block p-4 border border-teal-600 rounded-lg cursor-pointer">
-                                <input type="radio" name="subscription" value="vitaboost_monthly_single" class="sr-only" checked>
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold">VitaBoost Monthly Single</span>
-                                        <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl">87€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">107€</span>
-                                    </div>
+                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <input type="radio" name="subscription" value="longd_monthly_double" class="hidden">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Double</span>
+                                    <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
                                 </div>
-                                <div class="mt-2 text-sm text-gray-700">
-                                    <strong>Free Welcome Kit:</strong> Premium Canister, Scoop, VitaBoost Shaker, 5 Free Travel Packs & 1 year supply Vitamin D3+K2**
+                                <div class="text-right">
+                                    <span class="font-bold text-xl text-[#4facb0]">167€ p/M</span>
+                                    <span class="text-sm text-gray-500 line-through">214€</span>
                                 </div>
-                            </label>
-                            
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer">
-                                <input type="radio" name="subscription" value="vitaboost_monthly_double" class="sr-only">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold">VitaBoost Monthly Double</span>
-                                        <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl">167€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">214€</span>
-                                    </div>
-                                </div>
-                            </label>
-                            
-                            <div class="text-center text-sm text-gray-500">OR</div>
-                            
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer">
-                                <input type="radio" name="subscription" value="vitaboost_onetime_purchase" class="sr-only">
-                                <div class="flex items-center justify-between">
-                                    <span class="font-semibold">VitaBoost One-Time Purchase</span>
-                                    <span class="font-bold">107€</span>
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div id="travel-content" class="hidden">
-                        <h2 class="text-xl font-semibold mb-4">Travel Packs Subscription</h2>
+                            </div>
+                        </label>
                         
-                        <div class="space-y-4">
-                            <label class="block p-4 border border-teal-600 rounded-lg cursor-pointer">
-                                <input type="radio" name="travel-subscription" value="15-pack" class="sr-only" checked>
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold">15-Pack</span>
-                                        <p class="text-sm text-gray-600">15 individual servings. Perfect for short trips.</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl">45€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">55€</span>
-                                    </div>
-                                </div>
-                            </label>
-                            
-                            <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer">
-                                <input type="radio" name="travel-subscription" value="30-pack" class="sr-only">
-                                <div class="flex items-center justify-between">
-                                    <div>
-                                        <span class="font-semibold">30-Pack</span>
-                                        <p class="text-sm text-gray-600">30 individual servings. Ideal for longer journeys.</p>
-                                    </div>
-                                    <div class="text-right">
-                                        <span class="font-bold text-xl">85€ p/M</span>
-                                        <span class="text-sm text-gray-500 line-through">105€</span>
-                                    </div>
-                                </div>
-                            </label>
-                        </div>
+                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
+                            <input type="radio" name="subscription" value="longd_onetime_purchase" class="hidden">
+                            <div class="flex items-center justify-between">
+                                <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
+                                <span class="font-bold text-[#4facb0]">107€</span>
+                            </div>
+                        </label>
                     </div>
                     
                     <div class="mt-6">
-                        <h3 class="text-lg font-semibold mb-2">Get notified when available</h3>
+                        <h3 class="text-lg font-semibold mb-2 text-[#4facb0]">Get notified when available</h3>
                         <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
-                            <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <button type="submit" class="bg-teal-600 text-white py-2 px-6 rounded-md font-semibold hover:bg-teal-700 transition duration-300">
+                            <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
+                            <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
                                 Notify Me
                             </button>
                         </form>
@@ -160,94 +106,47 @@
         </div>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex flex-wrap justify-between">
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">VitaBoost</h3>
-                    <p>Enhancing longevity and energy through advanced micronutrient formulations.</p>
-                </div>
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">Quick Links</h3>
-                    <ul>
-                        <li><a href="#" class="hover:text-teal-300">Home</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Products</a></li>
-                        <li><a href="blog.html" class="hover:text-teal-300">Blog</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="w-full md:w-1/3">
-                    <h3 class="text-xl font-bold mb-2">Contact Us</h3>
-                    <p>Email: info@vitaboost.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
-                </div>
+    <section class="mt-16">
+        <h2 class="text-4xl font-bold mb-8 text-center gradient-text">The Science Behind LONGd</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                <img src="images/glycine.webp" alt="Glycine" class="w-full h-auto object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Glycine for Longevity</h3>
+                <p class="text-gray-600">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
             </div>
-            <div class="mt-8 text-center">
-                <p>&copy; 2023 VitaBoost. All rights reserved.</p>
+            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                <img src="images/minerals.webp" alt="Minerals" class="w-full h-auto object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Minerals for Performance</h3>
+                <p class="text-gray-600">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+            </div>
+            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
+                <img src="images/gut.webp" alt="Gut Health" class="w-full h-auto object-cover rounded-lg mb-4">
+                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Gut Health and Overall Balance</h3>
+                <p class="text-gray-600">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
+                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
             </div>
         </div>
-    </footer>
+    </section>
 
     <script>
-        // Pouch and Travel Pack switcher
-        const pouchBtn = document.getElementById('pouch-btn');
-        const travelBtn = document.getElementById('travel-btn');
-        const pouchContent = document.getElementById('pouch-content');
-        const travelContent = document.getElementById('travel-content');
-
-        pouchBtn.addEventListener('click', () => {
-            pouchBtn.classList.remove('bg-gray-100', 'text-gray-800');
-            pouchBtn.classList.add('bg-black', 'text-white');
-            travelBtn.classList.remove('bg-black', 'text-white');
-            travelBtn.classList.add('bg-gray-100', 'text-gray-800');
-            pouchContent.classList.remove('hidden');
-            travelContent.classList.add('hidden');
-        });
-
-        travelBtn.addEventListener('click', () => {
-            travelBtn.classList.remove('bg-gray-100', 'text-gray-800');
-            travelBtn.classList.add('bg-black', 'text-white');
-            pouchBtn.classList.remove('bg-black', 'text-white');
-            pouchBtn.classList.add('bg-gray-100', 'text-gray-800');
-            travelContent.classList.remove('hidden');
-            pouchContent.classList.add('hidden');
-        });
-
-        // Subscription option selection
-        const subscriptionOptions = document.querySelectorAll('input[name="subscription"], input[name="travel-subscription"]');
-        subscriptionOptions.forEach(option => {
-            option.addEventListener('change', (e) => {
-                const labels = document.querySelectorAll('label');
-                labels.forEach(label => {
-                    if (label.contains(e.target)) {
-                        label.classList.remove('border-gray-300');
-                        label.classList.add('border-teal-600');
-                    } else {
-                        label.classList.remove('border-teal-600');
-                        label.classList.add('border-gray-300');
-                    }
-                });
-            });
-        });
-
-        // Form submission
         document.getElementById('notify-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             const email = document.getElementById('email-input').value;
-            const selectedSubscription = document.querySelector('input[name="subscription"]:checked, input[name="travel-subscription"]:checked').value;
+            const selectedSubscription = document.querySelector('input[name="subscription"]:checked').value;
             const messageElement = document.getElementById('form-message');
 
             try {
                 const response = await fetch('https://script.google.com/macros/s/AKfycbx_v5j0qSOeSaxE-hqgkfgOvtMLmIRZfCxY6sFapnnhIrgHzwwz0zuLnIbbUdSq4359/exec', {
                     method: 'POST',
-                    mode: 'no-cors', // Important for CORS issues
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({ email, subscription: selectedSubscription }),
                 });
 
-                // Due to 'no-cors', we can't read the response, so we assume success
                 messageElement.textContent = 'Thank you for subscribing!';
                 messageElement.classList.add('text-green-600');
                 document.getElementById('email-input').value = '';
@@ -256,6 +155,18 @@
                 messageElement.textContent = 'Subscription failed. Please try again.';
                 messageElement.classList.add('text-red-600');
             }
+        });
+
+        // Fix for radio button selection
+        document.querySelectorAll('input[type="radio"][name="subscription"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('label').forEach(label => {
+                    label.classList.remove('border-[#4facb0]');
+                    label.classList.add('border-gray-300');
+                });
+                this.closest('label').classList.remove('border-gray-300');
+                this.closest('label').classList.add('border-[#4facb0]');
+            });
         });
     </script>
 </body>
