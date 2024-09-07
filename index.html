@@ -34,6 +34,30 @@
         .custom-shadow {
             box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
         }
+
+        .exit-intent-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .exit-intent-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body class="text-gray-800 flex flex-col min-h-screen">
@@ -192,153 +216,6 @@
         </div>
     </footer>
 
-    <script>
-    <main class="max-w-6xl mx-auto mt-8 px-4">
-        <div class="text-center mb-8">
-            <h1 class="text-5xl font-bold mb-4 gradient-text">Do your best work with LONGd</h1>
-            <p class="text-xl text-gray-600">Because your body deserves a better interest rate than your savings account!</p>
-        </div>
-        
-        <div class="flex flex-col md:flex-row gap-8">
-            <div class="md:w-1/2 flex justify-center items-center">
-                <div class="bg-white p-6 rounded-lg custom-shadow">
-                    <img src="images/OIG1.jpeg" alt="LONGd Product Set - Premium Longevity Supplements" class="w-full h-auto rounded-md mx-auto" width="500" height="500">
-                </div>
-            </div>
-            
-            <div class="md:w-1/2">
-                <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: The Compound Interest of Health Supplements</h2>
-                <p class="mb-4 text-gray-600">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
-                <ul class="list-disc list-inside mb-4 text-gray-600">
-                    <li>Glycine for longevity</li>
-                    <li>Potassium and Magnesium for performance</li>
-                    <li>Vitamins and fibers for gut and body balance</li>
-                </ul>
-                
-                <div class="bg-white p-6 rounded-lg custom-shadow">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Choose Your Health Portfolio</h3>
-                    
-                    <div class="space-y-4">
-                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                            <input type="radio" name="subscription" value="longd_monthly_single" class="hidden" checked>
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
-                                    <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through">107€</span>
-                                </div>
-                            </div>
-                        </label>
-                        
-                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                            <input type="radio" name="subscription" value="longd_monthly_double" class="hidden">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Double</span>
-                                    <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
-                                </div>
-                                <div class="text-right">
-                                    <span class="font-bold text-xl text-[#4facb0]">167€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through">214€</span>
-                                </div>
-                            </div>
-                        </label>
-                        
-                        <label class="block p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-blue-50 transition duration-300">
-                            <input type="radio" name="subscription" value="longd_onetime_purchase" class="hidden">
-                            <div class="flex items-center justify-between">
-                                <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
-                                <span class="font-bold text-[#4facb0]">107€</span>
-                            </div>
-                        </label>
-                    </div>
-                    
-                    <div class="mt-6">
-                        <h3 class="text-lg font-semibold mb-2 text-[#4facb0]">Get notified when available</h3>
-                        <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
-                            <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
-                            <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
-                                Notify Me
-                            </button>
-                        </form>
-                        <p id="form-message" class="mt-2 text-sm"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <section class="mt-16">
-        <h2 class="text-4xl font-bold mb-8 text-center gradient-text">The Science Behind LONGd</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                <img src="images/glycine.webp" alt="Glycine - Key Ingredient in LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Glycine for Longevity</h3>
-                <p class="text-gray-600">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
-                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
-            </div>
-            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                <img src="images/minerals.webp" alt="Minerals - Essential Components of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Minerals for Performance</h3>
-                <p class="text-gray-600">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
-                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
-            </div>
-            <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                <img src="images/gut.webp" alt="Gut Health - A Focus of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Gut Health and Overall Balance</h3>
-                <p class="text-gray-600">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
-                <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="mt-16 bg-gray-100 py-8">
-        <div class="max-w-6xl mx-auto px-4">
-            <!-- Add footer content here -->
-        </div>
-    </footer>
-
-    <script>
-        document.getElementById('notify-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const selectedSubscription = document.querySelector('input[name="subscription"]:checked').value;
-            const messageElement = document.getElementById('form-message');
-
-            try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbx_v5j0qSOeSaxE-hqgkfgOvtMLmIRZfCxY6sFapnnhIrgHzwwz0zuLnIbbUdSq4359/exec', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, subscription: selectedSubscription }),
-                });
-
-                messageElement.textContent = 'Thank you for subscribing!';
-                messageElement.classList.add('text-green-600');
-                document.getElementById('email-input').value = '';
-            } catch (error) {
-                console.error('Subscription error:', error);
-                messageElement.textContent = 'Subscription failed. Please try again.';
-                messageElement.classList.add('text-red-600');
-            }
-        });
-
-        // Fix for radio button selection
-        document.querySelectorAll('input[type="radio"][name="subscription"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                document.querySelectorAll('label').forEach(label => {
-                    label.classList.remove('border-[#4facb0]');
-                    label.classList.add('border-gray-300');
-                });
-                this.closest('label').classList.remove('border-gray-300');
-                this.closest('label').classList.add('border-[#4facb0]');
-            });
-        });
-    </script>
+    
 </body>
 </html>

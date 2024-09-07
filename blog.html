@@ -4,76 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VitaBoost Blog</title>
+    <title>LONGd Blog - Insights on Longevity and Health</title>
+    <meta name="description"
+        content="Explore the latest research and insights on longevity, health optimization, and nutrition on the LONGd blog.">
+    <meta name="keywords" content="LONGd, longevity, health optimization, nutrition, blog, research">
+    <meta name="author" content="LONGd">
+    <meta property="og:title" content="LONGd Blog - Insights on Longevity and Health">
+    <meta property="og:description"
+        content="Discover the latest scientific findings and expert advice on longevity and health optimization on the LONGd blog.">
+    <meta property="og:image" content="https://micmer-git.github.io/fortissimo_flow/images/blog-header.jpg">
+    <meta property="og:url" content="https://micmer-git.github.io/fortissimo_flow/blog.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://micmer-git.github.io/fortissimo_flow/blog.html">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
+        }
+
+        ::selection {
+            background-color: rgba(79, 172, 176, 0.3);
+            color: #333;
+        }
+
+        ::-moz-selection {
+            background-color: rgba(79, 172, 176, 0.3);
+            color: #333;
         }
     </style>
 </head>
 
-<body class="bg-gray-100">
-    <header class="bg-white shadow-sm py-4">
-        <div class="max-w-7xl mx-auto px-4">
-            <nav class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-teal-600">VitaBoost</a>
-                <ul class="flex space-x-4">
-                    <li><a href="index.html" class="text-gray-600 hover:text-teal-600">Home</a></li>
-                    <li><a href="blog.html" class="text-teal-600 font-semibold">Blog</a></li>
+<body class="text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-white shadow-md">
+        <nav class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold gradient-text">LONGd</a>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
+                    <li><a href="index.html#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
+                    <li><a href="index.html#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
+                    <li><a href="blog.html" class="text-[#4facb0]">Blog</a></li>
+                    <li><a href="index.html#contact" class="text-gray-600 hover:text-[#4facb0]">Contact</a></li>
                 </ul>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
-    <main class="max-w-4xl mx-auto mt-8 px-4">
-        <h1 class="text-3xl font-bold mb-8">VitaBoost Blog</h1>
+    <main class="flex-grow">
+        <div class="max-w-6xl mx-auto mt-8 px-4">
+            <h1 class="text-4xl font-bold mb-8 text-center gradient-text">LONGd Blog</h1>
 
-        <article class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-semibold mb-4">The Importance of Micronutrients for Longevity</h2>
-            <p class="text-gray-600 mb-4">Published on May 1, 2023</p>
-            <p>Micronutrients play a crucial role in maintaining our health and potentially extending our lifespan. In
-                this article, we explore the latest research on how various vitamins and minerals contribute to
-                longevity...</p>
-            <a href="#" class="text-teal-600 hover:underline">Read more</a>
-        </article>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog post 1 -->
+                <div class="bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="images/blog-post-1.jpg" alt="The Role of Glycine in Longevity"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2 text-[#4facb0]">The Role of Glycine in Longevity</h2>
+                        <p class="text-gray-600 mb-4">Explore the latest research on how glycine supplementation may
+                            contribute to increased lifespan and healthspan.</p>
+                        <a href="#" class="text-[#5cc6a7] hover:underline">Read more</a>
+                    </div>
+                </div>
 
-        <article class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Balancing Energy Levels: A Guide to Natural Supplements</h2>
-            <p class="text-gray-600 mb-4">Published on April 15, 2023</p>
-            <p>Feeling tired all the time? You're not alone. In this comprehensive guide, we'll discuss how certain
-                natural supplements can help balance your energy levels throughout the day...</p>
-            <a href="#" class="text-teal-600 hover:underline">Read more</a>
-        </article>
+                <!-- Blog post 2 -->
+                <div class="bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="images/blog-post-2.jpg" alt="Optimizing Mineral Intake for Peak Performance"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2 text-[#4facb0]">Optimizing Mineral Intake for Peak
+                            Performance</h2>
+                        <p class="text-gray-600 mb-4">Learn how the right balance of minerals like potassium and
+                            magnesium can enhance your physical and mental performance.</p>
+                        <a href="#" class="text-[#5cc6a7] hover:underline">Read more</a>
+                    </div>
+                </div>
 
-        <!-- Add more blog post previews as needed -->
+                <!-- Blog post 3 -->
+                <div class="bg-white rounded-lg overflow-hidden custom-shadow">
+                    <img src="images/blog-post-3.jpg" alt="The Gut-Brain Connection" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2 text-[#4facb0]">The Gut-Brain Connection</h2>
+                        <p class="text-gray-600 mb-4">Discover how maintaining a healthy gut microbiome can impact your
+                            cognitive function and overall well-being.</p>
+                        <a href="#" class="text-[#5cc6a7] hover:underline">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Add more blog posts as needed -->
+            </div>
+        </div>
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-4">
+    <footer class="mt-16 bg-gray-100 py-8">
+        <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-wrap justify-between">
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">VitaBoost</h3>
-                    <p>Enhancing longevity and energy through advanced micronutrient formulations.</p>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4 gradient-text">LONGd</h3>
+                    <p class="text-gray-600">Investing in your long-term health with premium longevity supplements.</p>
                 </div>
-                <div class="w-full md:w-1/3 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-2">Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html" class="hover:text-teal-300">Home</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Products</a></li>
-                        <li><a href="blog.html" class="hover:text-teal-300">Blog</a></li>
-                        <li><a href="#" class="hover:text-teal-300">Contact</a></li>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
+                        <li><a href="index.html#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
+                        <li><a href="index.html#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
+                        <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
                     </ul>
                 </div>
-                <div class="w-full md:w-1/3">
-                    <h3 class="text-xl font-bold mb-2">Contact Us</h3>
-                    <p>Email: info@vitaboost.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                <div class="w-full md:w-1/4 mb-6 md:mb-0">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Contact Us</h4>
+                    <p class="text-gray-600">Email: info@longd.com</p>
+                    <p class="text-gray-600">Phone: +1 (555) 123-4567</p>
+                </div>
+                <div class="w-full md:w-1/4">
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Facebook</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Twitter</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Instagram</a>
+                    </div>
                 </div>
             </div>
-            <div class="mt-8 text-center">
-                <p>&copy; 2023 VitaBoost. All rights reserved.</p>
+            <div class="mt-8 text-center text-gray-600">
+                <p>&copy; 2023 LONGd. All rights reserved.</p>
             </div>
         </div>
     </footer>
