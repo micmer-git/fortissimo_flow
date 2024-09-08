@@ -23,7 +23,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ... (same CSS as in the original file) ... */
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
+        }
+
+        .exit-intent-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .exit-intent-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .subscription-option.selected {
+            background-color: #e6f7ff;
+            border-color: #4facb0;
+        }
     </style>
 </head>
 
@@ -49,26 +95,20 @@
     <main class="flex-grow">
         <div class="max-w-6xl mx-auto mt-8 px-4">
             <div class="text-center mb-8">
-                <h1 class="text-5xl font-bold mb-4 gradient-text">Haz tu mejor trabajo con LONGd</h1>
-                <p class="text-xl text-gray-600">¡Porque tu cuerpo merece una mejor tasa de interés que tu cuenta de
-                    ahorros!</p>
+                <h1 class="text-5xl font-bold mb-4 gradient-text">Alcanza tu máximo potencial con LONGd</h1>
+                <p class="text-xl text-gray-600">¡Porque tu cuerpo merece una mejor tasa de interés que tu cuenta de ahorros!</p>
             </div>
 
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="md:w-1/2 flex justify-center items-center">
                     <div class="bg-white p-6 rounded-lg custom-shadow">
-                        <img src="images/OIG1.jpeg"
-                            alt="Conjunto de Productos LONGd - Suplementos Premium de Longevidad"
-                            class="w-full h-auto rounded-md mx-auto" width="500" height="500">
+                        <img src="images/OIG1.jpeg" alt="Conjunto de Productos LONGd - Suplementos Premium de Longevidad" class="w-full h-auto rounded-md mx-auto" width="500" height="500">
                     </div>
                 </div>
 
                 <div class="md:w-1/2">
-                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: El Interés Compuesto de los Suplementos de
-                        Salud</h2>
-                    <p class="mb-4 text-gray-600">¿Por qué conformarse con ganancias a corto plazo cuando puedes
-                        invertir en tu salud a largo plazo? LONGd ofrece ingredientes simples que se acumulan con el
-                        tiempo:</p>
+                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: El Interés Compuesto de los Suplementos de Salud</h2>
+                    <p class="mb-4 text-gray-600">¿Por qué conformarse con ganancias a corto plazo cuando puedes invertir en tu salud a largo plazo? LONGd ofrece ingredientes simples que se acumulan con el tiempo:</p>
                     <ul class="list-disc list-inside mb-4 text-gray-600">
                         <li>Glicina para la longevidad</li>
                         <li>Potasio y Magnesio para el rendimiento</li>
@@ -77,45 +117,39 @@
 
                     <div class="bg-white p-6 rounded-lg custom-shadow">
                         <div class="space-y-4">
-                            <h3 class="text-xl font-semibold mb-4">Elige Tu Cartera de Salud</h3>
+                            <h3 class="text-xl font-semibold mb-4">Elige tu Cartera de Salud</h3>
 
                             <div id="subscription-options">
-                                <button
-                                    class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2"
-                                    data-value="longd_monthly_single">
+                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_single">
                                     <span class="font-semibold text-[#4facb0]">LONGd Mensual Individual</span>
-                                    <p class="text-sm text-gray-600">30 porciones por bolsa. Envío mensual gratis.</p>
+                                    <p class="text-sm text-gray-600">30 porciones por paquete. Envío mensual gratuito.</p>
                                     <span class="font-bold text-xl text-[#4facb0]">87€ al mes</span>
                                     <span class="text-sm text-gray-500 line-through">107€</span>
                                 </button>
 
-                                <button
-                                    class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2"
-                                    data-value="longd_monthly_double">
+                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_double">
                                     <span class="font-semibold text-[#4facb0]">LONGd Mensual Doble</span>
-                                    <p class="text-sm text-gray-600">60 porciones (2 bolsas). Envío mensual gratis.</p>
+                                    <p class="text-sm text-gray-600">60 porciones (2 paquetes). Envío mensual gratuito.</p>
                                     <span class="font-bold text-xl text-[#4facb0]">167€ al mes</span>
                                     <span class="text-sm text-gray-500 line-through">214€</span>
                                 </button>
 
-                                <button
-                                    class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2"
-                                    data-value="longd_one_time_purchase">
+                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_one_time_purchase">
                                     <span class="font-semibold text-[#4facb0]">LONGd Compra Única</span>
                                     <span class="font-bold text-xl text-[#4facb0]">107€</span>
                                 </button>
                             </div>
 
                             <div class="mt-6">
-                                <h4 class="text-lg font-semibold mb-2">Recibe una notificación cuando esté disponible
-                                </h4>
+                                <h4 class="text-lg font-semibold mb-2">Recibe una notificación cuando esté disponible</h4>
                                 <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
+                                    <input type="email" id="email-input" placeholder="Ingresa tu email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
                                     <input type="email" id="email-input" placeholder="Ingresa tu email"
                                         class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]"
                                         required>
                                     <button type="submit"
                                         class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
-                                        Notifícame
+                                        Avísame
                                     </button>
                                 </form>
                             </div>
@@ -165,6 +199,7 @@
     </main>
 
     <footer class="mt-16 bg-gray-100 py-8">
+        <div class="00 py-8">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-wrap justify-between">
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
@@ -208,7 +243,7 @@
             <input type="email" placeholder="Ingresa tu email" class="w-full p-2 mb-4 border rounded" required>
             <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-4 rounded">Suscribirse</button>
         </form>
-        <button id="closePopup" class="mt-4 text-gray-600">No, gracias, paso</button>
+        <button id="closePopup" class="mt-4 text-gray-600">No, gracias</button>
     </div>
 
     <script src="script.js"></script>

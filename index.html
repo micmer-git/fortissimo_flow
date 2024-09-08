@@ -71,19 +71,21 @@
             <div class="flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-bold gradient-text">LONGd</a>
                 <ul class="flex space-x-6">
-                    <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
-                    <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
-                    <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
-                    <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-[#4facb0]">Contact</a></li>
-                    <li>
-                        <a href="index.html" class="text-gray-600 hover:text-[#4facb0]">EN</a>
-                    </li>
-                    <li>
-                        <a href="index-it.html" class="text-gray-600 hover:text-[#4facb0]">IT</a>
-                    </li>
-                    <li>
-                        <a href="index-es.html" class="text-gray-600 hover:text-[#4facb0]">ES</a>
+                    <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="home">Home</a></li>
+                    <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]" data-translate="products">Products</a></li>
+                    <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]" data-translate="science">Science</a></li>
+                    <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="blog">Blog</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-[#4facb0]" data-translate="contact_us">Contact</a></li>
+                    <li class="relative group">
+                        <button id="languageDropdown" class="text-gray-600 hover:text-[#4facb0] flex items-center">
+                            <span id="currentLanguage">🇺🇸</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <ul id="languageMenu" class="absolute hidden bg-white border border-gray-200 rounded-md mt-1 py-1 w-20">
+                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="en">🇺🇸 EN</button></li>
+                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="it">🇮🇹 IT</button></li>
+                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="es">🇪🇸 ES</button></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -93,8 +95,8 @@
     <main class="flex-grow">
         <div class="max-w-6xl mx-auto mt-8 px-4">
             <div class="text-center mb-8">
-                <h1 class="text-5xl font-bold mb-4 gradient-text">Do your best work with LONGd</h1>
-                <p class="text-xl text-gray-600">Because your body deserves a better interest rate than your savings account!</p>
+                <h1 class="text-5xl font-bold mb-4 gradient-text" data-translate="title">Do your best work with LONGd</h1>
+                <p class="text-xl text-gray-600" data-translate="subtitle">Because your body deserves a better interest rate than your savings account!</p>
             </div>
             
             <div class="flex flex-col md:flex-row gap-8">
@@ -105,44 +107,44 @@
                 </div>
                 
                 <div class="md:w-1/2">
-                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: The Compound Interest of Health Supplements</h2>
-                    <p class="mb-4 text-gray-600">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
+                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]" data-translate="longd_compound_interest">LONGd: The Compound Interest of Health Supplements</h2>
+                    <p class="mb-4 text-gray-600" data-translate="longevity_performance_gut_health">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
                     <ul class="list-disc list-inside mb-4 text-gray-600">
-                        <li>Glycine for longevity</li>
-                        <li>Potassium and Magnesium for performance</li>
-                        <li>Vitamins and fibers for gut and body balance</li>
+                        <li data-translate="glycine_longevity">Glycine for longevity</li>
+                        <li data-translate="potassium_magnesium_performance">Potassium and Magnesium for performance</li>
+                        <li data-translate="vitamins_fibers_gut_balance">Vitamins and fibers for gut and body balance</li>
                     </ul>
                     
                     <div class="bg-white p-6 rounded-lg custom-shadow">
                         <div class="space-y-4">
-                            <h3 class="text-xl font-semibold mb-4">Choose Your Health Portfolio</h3>
+                            <h3 class="text-xl font-semibold mb-4" data-translate="choose_health_portfolio">Choose Your Health Portfolio</h3>
                             
                             <div id="subscription-options">
                                 <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_single">
-                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Single</span>
-                                    <p class="text-sm text-gray-600">30 servings per pouch. Monthly Free Shipping.</p>
-                                    <span class="font-bold text-xl text-[#4facb0]">87€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through">107€</span>
+                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_monthly_single_label">LONGd Monthly Single</span>
+                                    <p class="text-sm text-gray-600" data-translate="longd_monthly_single_description">30 servings per pouch. Monthly Free Shipping.</p>
+                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_monthly_single_price">87€ p/M</span>
+                                    <span class="text-sm text-gray-500 line-through" data-translate="longd_monthly_single_original_price">107€</span>
                                 </button>
                                 
                                 <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_double">
-                                    <span class="font-semibold text-[#4facb0]">LONGd Monthly Double</span>
-                                    <p class="text-sm text-gray-600">60 servings (2 pouches). Monthly Free Shipping.</p>
-                                    <span class="font-bold text-xl text-[#4facb0]">167€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through">214€</span>
+                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_monthly_double_label">LONGd Monthly Double</span>
+                                    <p class="text-sm text-gray-600" data-translate="longd_monthly_double_description">60 servings (2 pouches). Monthly Free Shipping.</p>
+                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_monthly_double_price">167€ p/M</span>
+                                    <span class="text-sm text-gray-500 line-through" data-translate="longd_monthly_double_original_price">214€</span>
                                 </button>
                                 
                                 <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_one_time_purchase">
-                                    <span class="font-semibold text-[#4facb0]">LONGd One-Time Purchase</span>
-                                    <span class="font-bold text-xl text-[#4facb0]">107€</span>
+                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_one_time_purchase_label">LONGd One-Time Purchase</span>
+                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_one_time_purchase_price">107€</span>
                                 </button>
                             </div>
                             
                             <div class="mt-6">
-                                <h4 class="text-lg font-semibold mb-2">Get notified when available</h4>
+                                <h4 class="text-lg font-semibold mb-2" data-translate="get_notified_when_available">Get notified when available</h4>
                                 <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
                                     <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
-                                    <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300">
+                                    <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300" data-translate="notify_me_button">
                                         Notify Me
                                     </button>
                                 </form>
@@ -155,25 +157,25 @@
         </div>
 
         <section id="science" class="mt-16">
-            <h2 class="text-4xl font-bold mb-8 text-center gradient-text">The Science Behind LONGd</h2>
+            <h2 class="text-4xl font-bold mb-8 text-center gradient-text" data-translate="science_behind_longd">The Science Behind LONGd</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
                 <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
                     <img src="images/glycine.webp" alt="Glycine - Key Ingredient in LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Glycine for Longevity</h3>
-                    <p class="text-gray-600">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="glycine_longevity_title">Glycine for Longevity</h3>
+                    <p class="text-gray-600" data-translate="glycine_longevity_description">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
                     <img src="images/minerals.webp" alt="Minerals - Essential Components of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Minerals for Performance</h3>
-                    <p class="text-gray-600">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="minerals_performance_title">Minerals for Performance</h3>
+                    <p class="text-gray-600" data-translate="minerals_performance_description">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
                     <img src="images/gut.webp" alt="Gut Health - A Focus of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Gut Health and Overall Balance</h3>
-                    <p class="text-gray-600">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block">Read more</a>
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="gut_health_balance_title">Gut Health and Overall Balance</h3>
+                    <p class="text-gray-600" data-translate="gut_health_balance_description">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
+                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
                 </div>
             </div>
         </section>
@@ -183,49 +185,50 @@
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex flex-wrap justify-between">
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4 gradient-text">LONGd</h3>
-                    <p class="text-gray-600">Investing in your long-term health with premium longevity supplements.</p>
+                    <h3 class="text-xl font-bold mb-4 gradient-text" data-translate="longd_footer">LONGd</h3>
+                    <p class="text-gray-600" data-translate="longd_footer_description">Investing in your long-term health with premium longevity supplements.</p>
                 </div>
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Quick Links</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="quick_links">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]">Home</a></li>
-                        <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]">Products</a></li>
-                        <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]">Science</a></li>
-                        <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]">Blog</a></li>
+                        <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="home">Home</a></li>
+                        <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]" data-translate="products">Products</a></li>
+                        <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]" data-translate="science">Science</a></li>
+                        <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="blog">Blog</a></li>
                     </ul>
                 </div>
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Contact Us</h4>
-                    <p class="text-gray-600">Email: info@longd.com</p>
-                    <p class="text-gray-600">Phone: +1 (555) 123-4567</p>
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="contact_us">Contact Us</h4>
+                    <p class="text-gray-600" data-translate="email">Email: info@longd.com</p>
+                    <p class="text-gray-600" data-translate="phone">Phone: +1 (555) 123-4567</p>
                 </div>
                 <div class="w-full md:w-1/4">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]">Follow Us</h4>
+                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="follow_us">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Facebook</a>
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Twitter</a>
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]">Instagram</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="facebook">Facebook</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="twitter">Twitter</a>
+                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="instagram">Instagram</a>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center text-gray-600">
-                <p>&copy; 2023 LONGd. All rights reserved.</p>
+                <p data-translate="copyright">&copy; 2023 LONGd. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <div class="exit-intent-overlay" id="exitIntentOverlay"></div>
     <div class="exit-intent-popup" id="exitIntentPopup">
-        <h2 class="text-2xl font-bold mb-4">Wait! Don't miss out on LONGd</h2>
-        <p class="mb-4">Subscribe now and get 10% off your first order!</p>
+        <h2 class="text-2xl font-bold mb-4" data-translate="exit_intent_title">Wait! Don't miss out on LONGd</h2>
+        <p class="mb-4" data-translate="exit_intent_text">Subscribe now and get 10% off your first order!</p>
         <form id="exit-intent-form">
             <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded" required>
-            <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-4 rounded">Subscribe</button>
+            <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-4 rounded" data-translate="exit_intent_subscribe">Subscribe</button>
         </form>
-        <button id="closePopup" class="mt-4 text-gray-600">No thanks, I'll pass</button>
+        <button id="closePopup" class="mt-4 text-gray-600" data-translate="exit_intent_close">No thanks, I'll pass</button>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

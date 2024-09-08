@@ -65,6 +65,35 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#exitIntentPopup p').textContent = translations[lang].exitPopupText;
     document.querySelector('#exit-intent-form button').textContent = translations[lang].exitPopupButton;
     document.querySelector('#closePopup').textContent = translations[lang].exitPopupClose;
+
+    // Language dropdown
+    const languageDropdown = document.getElementById('languageDropdown');
+    const languageMenu = document.getElementById('languageMenu');
+    const languageOptions = document.querySelectorAll('.lang-option');
+
+    languageDropdown.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageMenu.classList.toggle('hidden');
+    });
+
+    languageOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const selectedLang = e.target.getAttribute('data-lang');
+            updateLanguage(selectedLang);
+            languageMenu.classList.add('hidden');
+        });
+    });
+
+    // Chiudi il menu quando si fa clic altrove nella pagina
+    document.addEventListener('click', () => {
+        languageMenu.classList.add('hidden');
+    });
+
+    // Previeni la chiusura del menu quando si fa clic al suo interno
+    languageMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
 });
 
 function handleFormSubmit(e, formId = 'notify-form') {
@@ -98,3 +127,29 @@ function closePopup() {
     document.getElementById('exitIntentOverlay').style.display = 'none';
     document.getElementById('exitIntentPopup').style.display = 'none';
 }
+
+function updateLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+            if (element.tagName === 'INPUT' && element.getAttribute('type') === 'email') {
+                element.placeholder = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        }
+    });
+
+    const flagEmoji = lang === 'en' ? '🇺🇸' : lang === 'it' ? '🇮🇹' : '🇪🇸';
+    document.getElementById('currentLanguage').textContent = flagEmoji;
+
+    // Aggiorna anche i testi del popup di exit intent
+    document.querySelector('#exitIntentPopup h2').textContent = translations[lang].exit_intent_title;
+    document.querySelector('#exitIntentPopup p').textContent = translations[lang].exit_intent_text;
+    document.querySelector('#exit-intent-form button').textContent = translations[lang].exit_intent_subscribe;
+    document.querySelector('#closePopup').textContent = translations[lang].exit_intent_close;
+}
+
+// Imposta la lingua predefinita
+updateLanguage('en');

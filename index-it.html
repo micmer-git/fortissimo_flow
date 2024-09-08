@@ -8,7 +8,7 @@
     <meta name="description"
         content="LONGd offre integratori per la salute scientificamente provati per la longevità, le prestazioni e la salute dell'intestino. Investi nel tuo benessere a lungo termine con le nostre formule premium.">
     <meta name="keywords"
-        content="LONGd, integratori per la longevità, ottimizzazione della salute, glicina, potassio, magnesio, salute dell'intestino, vitamine, fibre">
+        content="LONGd, integratori per la longevità, ottimizzazione della salute, glicina, potassio, magnesio, salute intestinale, vitamine, fibre">
     <meta name="author" content="LONGd">
     <meta property="og:title" content="LONGd - Investi nella Tua Salute a Lungo Termine">
     <meta property="og:description"
@@ -23,7 +23,53 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ... (same CSS as in the original file) ... */
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f0f4f8;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+        }
+
+        .custom-shadow {
+            box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
+        }
+
+        .exit-intent-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .exit-intent-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .subscription-option.selected {
+            background-color: #e6f7ff;
+            border-color: #4facb0;
+        }
     </style>
 </head>
 
@@ -49,8 +95,8 @@
     <main class="flex-grow">
         <div class="max-w-6xl mx-auto mt-8 px-4">
             <div class="text-center mb-8">
-                <h1 class="text-5xl font-bold mb-4 gradient-text">Fai il tuo miglior lavoro con LONGd</h1>
-                <p class="text-xl text-gray-600">Perché il tuo corpo merita un tasso di interesse migliore del tuo conto
+                <h1 class="text-5xl font-bold mb-4 gradient-text">Raggiungi il tuo massimo potenziale con LONGd</h1>
+                <p class="text-xl text-gray-600">Perché il tuo corpo merita un tasso d'interesse migliore del tuo conto
                     di risparmio!</p>
             </div>
 
@@ -66,7 +112,7 @@
                     <h2 class="text-2xl font-bold mb-4 text-[#4facb0]">LONGd: L'Interesse Composto degli Integratori per
                         la Salute</h2>
                     <p class="mb-4 text-gray-600">Perché accontentarsi di guadagni a breve termine quando puoi investire
-                        nella tua salute a lungo termine? LONGd offre semplici ingredienti che si accumulano nel tempo:
+                        nella tua salute a lungo termine? LONGd offre ingredienti semplici che si accumulano nel tempo:
                     </p>
                     <ul class="list-disc list-inside mb-4 text-gray-600">
                         <li>Glicina per la longevità</li>
@@ -135,8 +181,8 @@
                     <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Glicina per la Longevità</h3>
                     <p class="text-gray-600">Studi recenti hanno dimostrato che l'integrazione di glicina può
                         contribuire ad aumentare la durata e la qualità della vita. Uno studio del 2018 pubblicato su
-                        Cell Metabolism ha scoperto che l'integrazione di glicina ha esteso la durata della vita nei
-                        topi.</p>
+                        Cell Metabolism ha scoperto che la supplementazione di glicina ha esteso la durata della vita
+                        nei topi.</p>
                     <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818"
                         class="text-[#5cc6a7] hover:underline mt-2 inline-block">Leggi di più</a>
                 </div>
@@ -152,13 +198,13 @@
                         class="text-[#5cc6a7] hover:underline mt-2 inline-block">Leggi di più</a>
                 </div>
                 <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                    <img src="images/gut.webp" alt="Salute dell'Intestino - Un Focus degli Integratori LONGd"
+                    <img src="images/gut.webp" alt="Salute Intestinale - Un Focus degli Integratori LONGd"
                         class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Salute dell'Intestino ed Equilibrio Generale
-                    </h3>
-                    <p class="text-gray-600">L'importanza della salute dell'intestino per il benessere generale è sempre
-                        più riconosciuta. Una revisione del 2019 sulla rivista Nutrients ha evidenziato il ruolo delle
-                        fibre alimentari nel mantenere un microbioma intestinale sano e ridurre l'infiammazione.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]">Salute Intestinale ed Equilibrio Generale</h3>
+                    <p class="text-gray-600">L'importanza della salute intestinale per il benessere generale è sempre
+                        più riconosciuta. Una revisione del 2019 pubblicata sulla rivista Nutrients ha evidenziato il
+                        ruolo delle fibre alimentari nel mantenimento di un microbioma intestinale sano e nella
+                        riduzione dell'infiammazione.</p>
                     <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818"
                         class="text-[#5cc6a7] hover:underline mt-2 inline-block">Leggi di più</a>
                 </div>
@@ -171,7 +217,7 @@
             <div class="flex flex-wrap justify-between">
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
                     <h3 class="text-xl font-bold mb-4 gradient-text">LONGd</h3>
-                    <p class="text-gray-600">Investire nella tua salute a lungo termine con integratori premium per la
+                    <p class="text-gray-600">Investiamo nella tua salute a lungo termine con integratori premium per la
                         longevità.</p>
                 </div>
                 <div class="w-full md:w-1/4 mb-6 md:mb-0">
@@ -216,5 +262,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
