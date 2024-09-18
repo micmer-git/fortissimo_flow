@@ -1,234 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LONGd - Premium Longevity Supplements for Optimal Health</title>
-    <meta name="description" content="LONGd offers scientifically-backed health supplements for longevity, performance, and gut health. Invest in your long-term well-being with our premium formulas.">
-    <meta name="keywords" content="LONGd, longevity supplements, health optimization, glycine, potassium, magnesium, gut health, vitamins, fibers">
-    <meta name="author" content="LONGd">
-    <meta property="og:title" content="LONGd - Invest in Your Long-Term Health">
-    <meta property="og:description" content="Discover LONGd's premium health supplements for longevity, performance, and gut health. Optimize your well-being with our scientifically-backed formulas.">
-    <meta property="og:image" content="https://micmer-git.github.io/fortissimo_flow/images/OIG1.jpeg">
-    <meta property="og:url" content="https://micmer-git.github.io/fortissimo_flow/">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://micmer-git.github.io/fortissimo_flow/">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ff H2O - Look Beyond Limits</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
         body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #f0f4f8;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background-color: #f4f4f8;
+            color: #333;
         }
 
-        .gradient-bg {
-            background: linear-gradient(90deg, #4facb0 0%, #5cc6a7 50%, #6ed5a1 100%);
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .custom-shadow {
-            box-shadow: 0 4px 6px -1px rgba(79, 172, 176, 0.1), 0 2px 4px -1px rgba(110, 213, 161, 0.06);
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
 
-        .exit-intent-popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 2rem;
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            background-color: #ff8a8a;
+            border: none;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff6f6f;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .exit-intent-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .subscription-option.selected {
-            background-color: #e6f7ff;
-            border-color: #4facb0;
+        .hero p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .get-in-touch {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .get-in-touch button {
+            margin-left: 10px;
+            background-color: #ff8a8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .testimonial {
+            background-color: #fafafa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            margin: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+
+            nav ul li {
+                margin-left: 10px;
+            }
         }
     </style>
 </head>
-<body class="text-gray-800 flex flex-col min-h-screen">
-    <header class="bg-white shadow-md">
-        <nav class="max-w-6xl mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold gradient-text">LONGd</a>
-                <ul class="flex space-x-6">
-                    <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="home">Home</a></li>
-                    <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]" data-translate="products">Products</a></li>
-                    <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]" data-translate="science">Science</a></li>
-                    <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="blog">Blog</a></li>
-                    <li><a href="#contact" class="text-gray-600 hover:text-[#4facb0]" data-translate="contact_us">Contact</a></li>
-                    <li class="relative group">
-                        <button id="languageDropdown" class="text-gray-600 hover:text-[#4facb0] flex items-center">
-                            <span id="currentLanguage">🇺🇸</span>
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                        <ul id="languageMenu" class="absolute hidden bg-white border border-gray-200 rounded-md mt-1 py-1 w-20">
-                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="en">🇺🇸 EN</button></li>
-                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="it">🇮🇹 IT</button></li>
-                            <li><button class="lang-option block px-4 py-2 text-gray-800 hover:bg-gray-100 w-full text-left" data-lang="es">🇪🇸 ES</button></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+
+<body>
+
+    <header>
+        <div class="logo">ff H2O</div>
+        <nav>
+            <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
         </nav>
+        <button class="cta-button">Contact Us</button>
     </header>
 
-    <main class="flex-grow">
-        <div class="max-w-6xl mx-auto mt-8 px-4">
-            <div class="text-center mb-8">
-                <h1 class="text-5xl font-bold mb-4 gradient-text" data-translate="title">Do your best work with LONGd</h1>
-                <p class="text-xl text-gray-600" data-translate="subtitle">Because your body deserves a better interest rate than your savings account!</p>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2 flex justify-center items-center">
-                    <div class="bg-white p-6 rounded-lg custom-shadow">
-                        <img src="images/OIG1.jpeg" alt="LONGd Product Set - Premium Longevity Supplements" class="w-full h-auto rounded-md mx-auto" width="500" height="500">
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <h2 class="text-2xl font-bold mb-4 text-[#4facb0]" data-translate="longd_compound_interest">LONGd: The Compound Interest of Health Supplements</h2>
-                    <p class="mb-4 text-gray-600" data-translate="longevity_performance_gut_health">Why settle for short-term gains when you can invest in your long-term health? LONGd offers simple compounding ingredients:</p>
-                    <ul class="list-disc list-inside mb-4 text-gray-600">
-                        <li data-translate="glycine_longevity">Glycine for longevity</li>
-                        <li data-translate="potassium_magnesium_performance">Potassium and Magnesium for performance</li>
-                        <li data-translate="vitamins_fibers_gut_balance">Vitamins and fibers for gut and body balance</li>
-                    </ul>
-                    
-                    <div class="bg-white p-6 rounded-lg custom-shadow">
-                        <div class="space-y-4">
-                            <h3 class="text-xl font-semibold mb-4" data-translate="choose_health_portfolio">Choose Your Health Portfolio</h3>
-                            
-                            <div id="subscription-options">
-                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_single">
-                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_monthly_single_label">LONGd Monthly Single</span>
-                                    <p class="text-sm text-gray-600" data-translate="longd_monthly_single_description">30 servings per pouch. Monthly Free Shipping.</p>
-                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_monthly_single_price">87€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through" data-translate="longd_monthly_single_original_price">107€</span>
-                                </button>
-                                
-                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_monthly_double">
-                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_monthly_double_label">LONGd Monthly Double</span>
-                                    <p class="text-sm text-gray-600" data-translate="longd_monthly_double_description">60 servings (2 pouches). Monthly Free Shipping.</p>
-                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_monthly_double_price">167€ p/M</span>
-                                    <span class="text-sm text-gray-500 line-through" data-translate="longd_monthly_double_original_price">214€</span>
-                                </button>
-                                
-                                <button class="subscription-option w-full text-left p-4 border border-gray-300 rounded-lg mb-2" data-value="longd_one_time_purchase">
-                                    <span class="font-semibold text-[#4facb0]" data-translate="longd_one_time_purchase_label">LONGd One-Time Purchase</span>
-                                    <span class="font-bold text-xl text-[#4facb0]" data-translate="longd_one_time_purchase_price">107€</span>
-                                </button>
-                            </div>
-                            
-                            <div class="mt-6">
-                                <h4 class="text-lg font-semibold mb-2" data-translate="get_notified_when_available">Get notified when available</h4>
-                                <form id="notify-form" class="flex flex-col sm:flex-row gap-2">
-                                    <input type="email" id="email-input" placeholder="Enter your email" class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#4facb0]" required>
-                                    <button type="submit" class="bg-[#4facb0] text-white py-2 px-6 rounded-md font-semibold hover:bg-[#5cc6a7] transition duration-300" data-translate="notify_me_button">
-                                        Notify Me
-                                    </button>
-                                </form>
-                            </div>
-                            <p id="form-message" class="mt-2 text-sm"></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="hero">
+        <h1>Look Beyond Limits</h1>
+        <p>ff H2O - The super drink with only 40kcal. It promotes longevity, health, and optimal mineral balance.</p>
+        <div class="get-in-touch">
+            <button>Get in touch</button>
         </div>
+    </section>
 
-        <section id="science" class="mt-16">
-            <h2 class="text-4xl font-bold mb-8 text-center gradient-text" data-translate="science_behind_longd">The Science Behind LONGd</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                    <img src="images/glycine.webp" alt="Glycine - Key Ingredient in LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="glycine_longevity_title">Glycine for Longevity</h3>
-                    <p class="text-gray-600" data-translate="glycine_longevity_description">Recent studies have shown that glycine supplementation may contribute to increased lifespan and healthspan. A 2018 study published in Cell Metabolism found that glycine supplementation extended lifespan in mice.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                    <img src="images/minerals.webp" alt="Minerals - Essential Components of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="minerals_performance_title">Minerals for Performance</h3>
-                    <p class="text-gray-600" data-translate="minerals_performance_description">Potassium and Magnesium play crucial roles in muscle function and energy metabolism. A 2017 meta-analysis in the Journal of Human Hypertension found that increased potassium intake was associated with reduced blood pressure.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
-                </div>
-                <div class="bg-white p-6 rounded-lg custom-shadow hover:shadow-lg transition duration-300">
-                    <img src="images/gut.webp" alt="Gut Health - A Focus of LONGd Supplements" class="w-full h-auto object-cover rounded-lg mb-4" width="300" height="200">
-                    <h3 class="text-xl font-semibold mb-4 text-[#4facb0]" data-translate="gut_health_balance_title">Gut Health and Overall Balance</h3>
-                    <p class="text-gray-600" data-translate="gut_health_balance_description">The importance of gut health in overall well-being is increasingly recognized. A 2019 review in the journal Nutrients highlighted the role of dietary fibers in maintaining a healthy gut microbiome and reducing inflammation.</p>
-                    <a href="https://www.sciencedirect.com/science/article/pii/S1568163723000818" class="text-[#5cc6a7] hover:underline mt-2 inline-block" data-translate="read_more">Read more</a>
-                </div>
-            </div>
-        </section>
-    </main>
+    <section class="testimonial">
+        <p>"I feel refreshed and energetic after drinking ff H2O. It's perfect for my daily routine, keeping me healthy and balanced!"</p>
+        <p>- A satisfied customer</p>
+    </section>
 
-    <footer class="mt-16 bg-gray-100 py-8">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex flex-wrap justify-between">
-                <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4 gradient-text" data-translate="longd_footer">LONGd</h3>
-                    <p class="text-gray-600" data-translate="longd_footer_description">Investing in your long-term health with premium longevity supplements.</p>
-                </div>
-                <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="quick_links">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="home">Home</a></li>
-                        <li><a href="#products" class="text-gray-600 hover:text-[#4facb0]" data-translate="products">Products</a></li>
-                        <li><a href="#science" class="text-gray-600 hover:text-[#4facb0]" data-translate="science">Science</a></li>
-                        <li><a href="blog.html" class="text-gray-600 hover:text-[#4facb0]" data-translate="blog">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="w-full md:w-1/4 mb-6 md:mb-0">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="contact_us">Contact Us</h4>
-                    <p class="text-gray-600" data-translate="email">Email: info@longd.com</p>
-                    <p class="text-gray-600" data-translate="phone">Phone: +1 (555) 123-4567</p>
-                </div>
-                <div class="w-full md:w-1/4">
-                    <h4 class="text-lg font-semibold mb-4 text-[#4facb0]" data-translate="follow_us">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="facebook">Facebook</a>
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="twitter">Twitter</a>
-                        <a href="#" class="text-gray-600 hover:text-[#4facb0]" data-translate="instagram">Instagram</a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 text-center text-gray-600">
-                <p data-translate="copyright">&copy; 2023 LONGd. All rights reserved.</p>
-            </div>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2024 ff H2O. All rights reserved.</p>
+        <p>Developed by Our Team</p>
     </footer>
 
-    <div class="exit-intent-overlay" id="exitIntentOverlay"></div>
-    <div class="exit-intent-popup" id="exitIntentPopup">
-        <h2 class="text-2xl font-bold mb-4" data-translate="exit_intent_title">Wait! Don't miss out on LONGd</h2>
-        <p class="mb-4" data-translate="exit_intent_text">Subscribe now and get 10% off your first order!</p>
-        <form id="exit-intent-form">
-            <input type="email" placeholder="Enter your email" class="w-full p-2 mb-4 border rounded" required>
-            <button type="submit" class="w-full bg-[#4facb0] text-white py-2 px-4 rounded" data-translate="exit_intent_subscribe">Subscribe</button>
-        </form>
-        <button id="closePopup" class="mt-4 text-gray-600" data-translate="exit_intent_close">No thanks, I'll pass</button>
-    </div>
-
-    <script src="translations.js"></script>
-    <script src="script.js"></script>
 </body>
+
 </html>
